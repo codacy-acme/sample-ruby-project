@@ -31,8 +31,8 @@ jobs:
         run: bundle exec rspec --require ./spec/spec_helper.rb
 
       - name: Upload coverage report to Codacy
-        uses: codacy/upload-coverage@v2
+        uses: codacy/codacy-coverage-reporter-action@v1
         with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-report: coverage/.resultset.json  # Adjust the path to your coverage report
+          project-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-reports: coverage/.resultset.json
 
