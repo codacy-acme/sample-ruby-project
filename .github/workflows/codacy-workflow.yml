@@ -1,6 +1,9 @@
 name: Codacy Coverage
 
 on:
+  push:
+    branches:
+      - main  # Modify this branch as needed
   pull_request:
     branches:
       - main  # Modify this branch as needed
