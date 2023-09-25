@@ -1,0 +1,35 @@
+name: Codacy Coverage
+
+on:
+  pull_request:
+    branches:
+      - main  # Modify this branch as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7  # Modify the Ruby version as needed
+
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Install project dependencies
+        run: bundle install
+
+      - name: Run tests with coverage
+        run: bundle exec rspec --require ./spec/spec_helper.rb
+
+      - name: Upload coverage report to Codacy
+        uses: codacy/upload-coverage@v2
+        with:
+          api-token: ${{ secrets.CODACY_API_TOKEN }}
+          coverage-report: coverage/.resultset.json  # Adjust the path to your coverage report
+

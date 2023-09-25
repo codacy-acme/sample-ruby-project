@@ -1,0 +1,21 @@
+# inherit_from: .rubocop_todo.yml
+# .rubocop.yml
+
+# You can adjust these rules and settings as needed
+AllCops:
+  TargetRubyVersion: 2.7 # Set your target Ruby version
+  Exclude:
+    - 'db/schema.rb'
+    - 'config/routes.rb'
+
+# Customize your rules based on your preferences
+# For example, to address RuboCop issues identified in the example:
+Lint/MissingSuper:
+  Enabled: true
+  EnforcedStyle: error
+
+Layout/IndentationStyle:
+  Enabled: true
+  IndentationWidth: 2
+
+# Add other RuboCop rules as needed...
