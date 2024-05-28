@@ -17,4 +17,6 @@ Layout/IndentationStyle:
   Enabled: true
   IndentationWidth: 8
 
+Bundler/OrderedGems:
+  Enabled: false
 # Add other RuboCop rules as needed...
