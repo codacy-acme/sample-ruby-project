@@ -11,6 +11,10 @@ class Example
     puts "Hello, #{@name}"
   end
 
+    def say_bye
+    puts "bye, #{@name}"
+  end
+
   def insecure_code(sql)
     ActiveRecord::Base.connection.execute(sql)
   end
