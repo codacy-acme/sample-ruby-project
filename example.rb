@@ -11,8 +11,8 @@ class Example
     puts "Hello, #{@name}"
   end
 
-    def say_bye
-    puts "bye, #{@name}"
+  def say_bye
+    puts "Bye, #{@name}"
   end
 
   def insecure_code(sql)
